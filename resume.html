@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saiteja Gajula — Résumé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #F6F6F3;
+      color: #17172B;
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.55;
+      padding: 2.5rem 1.5rem;
+    }
+    .sheet {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid rgba(23,23,43,0.12);
+      border-radius: 16px;
+      padding: 3rem;
+    }
+    header { border-bottom: 2px solid #F59E0B; padding-bottom: 1.2rem; margin-bottom: 1.6rem; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; letter-spacing: -0.01em; }
+    h1 span { color: #E11D48; }
+    .role { color: #5B5B70; font-weight: 500; margin-top: 0.2rem; }
+    .contact { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin-top: 0.8rem; font-size: 0.88rem; color: #5B5B70; }
+    .contact a { color: #E11D48; text-decoration: none; }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #0D9488;
+      margin: 1.6rem 0 0.7rem;
+    }
+    p, li { font-size: 0.94rem; color: #3D3D55; }
+    ul { padding-left: 1.2rem; display: grid; gap: 0.3rem; margin-bottom: 0.6rem; }
+    .job { margin-bottom: 1rem; }
+    .job-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem; }
+    .job-head strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; }
+    .job-head span { font-size: 0.84rem; color: #5B5B70; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .chips span {
+      font-size: 0.78rem;
+      border: 1px solid rgba(23,23,43,0.2);
+      border-radius: 100px;
+      padding: 0.22rem 0.7rem;
+    }
+    .actions {
+      max-width: 800px;
+      margin: 1.2rem auto 0;
+      display: flex;
+      gap: 0.8rem;
+      justify-content: flex-end;
+    }
+    .actions a, .actions button {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid rgba(23,23,43,0.18);
+      background: #fff;
+      color: #17172B;
+    }
+    .actions .primary { background: #F59E0B; color: #1a1330; border: 0; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .sheet { border: 0; border-radius: 0; padding: 0; max-width: none; }
+      .actions { display: none; }
+      h2 { color: #0D9488; }
+    }
+  </style>
+</head>
+<body>
+  <div class="actions">
+    <a href="index.html">← Portfolio</a>
+    <button class="primary" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="sheet">
+    <header>
+      <h1>Saiteja Gajula<span>.</span></h1>
+      <p class="role">Front-End Web Developer · B.Tech CSE Student</p>
+      <div class="contact">
+        <span>India · Remote-friendly</span>
+        <a href="mailto:saitejag562@gmail.com">saitejag562@gmail.com</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </header>
+
+    <h2>Profile</h2>
+    <p>Third-year Computer Science student focused on front-end development. I build clean, fast, responsive websites with semantic HTML, modern CSS and vanilla JavaScript — and I care about accessibility, performance and details that survive a Lighthouse audit.</p>
+
+    <h2>Skills</h2>
+    <div class="chips">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+      <span>Fetch API</span><span>LocalStorage</span><span>Git</span><span>GitHub</span>
+      <span>VS Code</span><span>Chrome DevTools</span><span>Accessibility</span>
+    </div>
+
+    <h2>Learning</h2>
+    <div class="chips"><span>React</span><span>TypeScript</span><span>Node.js</span></div>
+
+    <h2>Projects</h2>
+    <div class="job">
+      <div class="job-head"><strong>Weather Now</strong><span>HTML · CSS · JS · Fetch API</span></div>
+      <ul>
+        <li>City search with live weather data, loading and error states, mobile-first responsive layout.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><strong>Task Board</strong><span>HTML · CSS · JS · LocalStorage</span></div>
+      <ul>
+        <li>Three-column drag-and-drop board; tasks persist between visits via localStorage.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><strong>Pomodoro Focus</strong><span>HTML · CSS · JS · Timers</span></div>
+      <ul>
+        <li>Focus timer with work/break cycles, session tracking and desktop notifications.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><strong>Quiz App</strong><span>HTML · CSS · JS · DOM</span></div>
+      <ul>
+        <li>Timed multiple-choice quiz with instant feedback, scoring and a results screen.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="job">
+      <div class="job-head"><strong>B.Tech, Computer Science &amp; Engineering</strong><span>2023 — Present</span></div>
+      <p>Relevant coursework: data structures, web technologies, DBMS, operating systems.</p>
+    </div>
+
+    <h2>Highlights</h2>
+    <ul>
+      <li>4+ personal projects shipped end-to-end (design, build, deploy)</li>
+      <li>Strong focus on semantic markup, accessibility and performance</li>
+      <li>Self-taught via documentation, small builds and code review</li>
+    </ul>
+  </div>
+</body>
+</html>
