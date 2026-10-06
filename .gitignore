@@ -9,3 +9,8 @@ Desktop.ini
 
 # Logs
 *.log
+
+# Vercel
+.vercel/
+.vercel
+.env*
