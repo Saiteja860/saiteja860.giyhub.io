@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saiteja Gajula — Student & Aspiring Web Developer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0F1720;
+    --bg-panel: #16212C;
+    --bg-panel-2: #1C2833;
+    --text: #E8ECEF;
+    --text-muted: #8B98A5;
+    --accent: #4FD1AE;
+    --accent-dim: rgba(79, 209, 174, 0.15);
+    --amber: #E8B14F;
+    --line: rgba(255, 255, 255, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-nodes {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: rise 0.9s ease-out 0.15s forwards;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 11ch;
+  }
+
+  .hero .role {
+    margin-top: 22px;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 46ch;
+  }
+
+  .hero .role strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    left: 28px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .scroll-cue .line {
+    width: 32px;
+    height: 1px;
+    background: var(--text-muted);
+  }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: 88px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    margin-bottom: 28px;
+  }
+
+  .about p {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    max-width: 62ch;
+  }
+
+  .about p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Skills */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 6px;
+  }
+
+  .skill-item {
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.98rem;
+    color: var(--text);
+  }
+
+  /* Project */
+  .project-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 36px;
+    position: relative;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 10px 0 0 10px;
+  }
+
+  .project-tag {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+  }
+
+  .project-card p {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    max-width: 58ch;
+  }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .project-meta span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border: 1px solid var(--line);
+    padding: 5px 12px;
+    border-radius: 5px;
+  }
+
+  /* Contact */
+  .contact p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 50ch;
+    margin-bottom: 26px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.15rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contact-link:hover {
+    color: var(--accent);
+  }
+
+  footer {
+    padding: 32px 0 48px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+    section { padding: 64px 0; }
+    .project-card { padding: 26px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-content { animation: none; opacity: 1; }
+  }
+
+  @media print {
+    .hero-content { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="hero-nodes" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#4FD1AE" stroke-opacity="0.35" stroke-width="1">
+      <line x1="560" y1="90" x2="700" y2="160"/>
+      <line x1="700" y1="160" x2="660" y2="300"/>
+      <line x1="660" y1="300" x2="760" y2="420"/>
+      <line x1="560" y1="90" x2="620" y2="230"/>
+      <line x1="620" y1="230" x2="660" y2="300"/>
+      <line x1="620" y1="230" x2="500" y2="260"/>
+      <line x1="500" y1="260" x2="560" y2="410"/>
+      <line x1="560" y1="410" x2="660" y2="300"/>
+      <line x1="660" y1="450" x2="760" y2="420"/>
+      <line x1="560" y1="410" x2="660" y2="450"/>
+    </g>
+    <g fill="#4FD1AE">
+      <circle cx="560" cy="90" r="4" fill-opacity="0.9"/>
+      <circle cx="700" cy="160" r="3.5" fill-opacity="0.7"/>
+      <circle cx="660" cy="300" r="5" fill-opacity="0.9"/>
+      <circle cx="760" cy="420" r="3.5" fill-opacity="0.6"/>
+      <circle cx="620" cy="230" r="3" fill-opacity="0.6"/>
+      <circle cx="500" cy="260" r="4" fill-opacity="0.8"/>
+      <circle cx="560" cy="410" r="4.5" fill-opacity="0.85"/>
+      <circle cx="660" cy="450" r="3" fill-opacity="0.6"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-content">
+    <div class="eyebrow">Saiteja Gajula</div>
+    <h1>Student, building toward web development.</h1>
+    <p class="role">Currently in my <strong>3rd year of B.Tech, Computer Science</strong> — learning the fundamentals and putting them into practice through small, real projects.</p>
+  </div>
+
+  <div class="scroll-cue"><span class="line"></span> Scroll</div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <h2 class="section-title">About</h2>
+    <p>I'm a <strong>3rd-year B.Tech Computer Science</strong> student with a growing interest in <strong>web development</strong>. I like working through problems hands-on — most recently by building a small system that applies blockchain to a practical, everyday need.</p>
+  </div>
+</section>
+
+<section class="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+      <div class="skill-item">HTML</div>
+      <div class="skill-item">Python</div>
+    </div>
+  </div>
+</section>
+
+<section class="work">
+  <div class="wrap">
+    <h2 class="section-title">Project</h2>
+    <div class="project-card">
+      <div class="project-tag">Featured project</div>
+      <h3>Health Record Using Blockchain</h3>
+      <p>A system for securely storing and managing patient details, designed with small hospitals in mind — where a lightweight, tamper-resistant way to keep records can make a real difference.</p>
+      <div class="project-meta">
+        <span>Blockchain</span>
+        <span>Healthcare</span>
+        <span>Small hospitals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2 class="section-title">Get in touch</h2>
+    <p>Open to conversations about web development, projects, or opportunities to learn and collaborate.</p>
+    <a class="contact-link" href="mailto:saitejag562@gmail.com">saitejag562@gmail.com →</a>
+    <br><br>
+    <a class="contact-link" href="tel:+919390728592">+91 93907 28592 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Saiteja Gajula</div>
+</footer>
+
+</body>
+</html>
